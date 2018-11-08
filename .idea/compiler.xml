@@ -9,5 +9,8 @@
         <module name="Chantouch" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Chantouch" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
