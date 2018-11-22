@@ -1,42 +1,20 @@
-import java.util.Scanner;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-public class Main {
-    public void start(){
+public class Main extends Application {
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("/Home.fxml"));
+        primaryStage.setTitle("Expense");
+        primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.setResizable(false);
+        primaryStage.show();
+    }
 
-        Ledger ledgerAccount;
-        ledgerAccount = new Ledger();
-        Scanner in = new Scanner(System.in);
-        while(true){
-            int state = ledgerAccount.getState();
-            if(state == Ledger.TRANSACT){
-                System.out.print("Enter 1 = Income , Enter 2 = Expenses , Enter 0 = Exit " + " ");
-                int number = in.nextInt();
-                if(number == 1){
-                    System.out.print("Enter your income : ");
-                    double income = in.nextDouble();
-                    System.out.print("Enter your Details : ");
-                    in.useDelimiter("\n");
-                    String details = in.next();
-                    ledgerAccount.income(income,details);
-                }
-                else if(number == 2){
-                    System.out.print("Enter your expenses: ");
-                    double expenses = in.nextDouble();
-                    System.out.print("Enter your Details : ");
-                    in.useDelimiter("\n");
-                    String details = in.next();
-                    try {
-                        ledgerAccount.expense(expenses,details);
-                    } catch (OverExpenseException e) {
-                        System.out.println(e.getMessage());
-                    }
-                }
-                else if(number == 0){
-                    break;
-                }
-            }
-        }
-        System.out.println("\n" + ledgerAccount.getTotal());
-        System.out.println(ledgerAccount.getBalance());
+    public static void main(String[] args) {
+        launch(args);
     }
 }
