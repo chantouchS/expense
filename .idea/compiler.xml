@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="5910451014" />
         <module name="Chantouch" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Chantouch" target="7" />
+      <module name="5910451014" target="7" />
+      <module name="Chantouch" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

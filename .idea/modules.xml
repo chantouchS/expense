@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/5910451014.iml" filepath="$PROJECT_DIR$/5910451014.iml" />
       <module fileurl="file://$PROJECT_DIR$/Chantouch.iml" filepath="$PROJECT_DIR$/Chantouch.iml" />
     </modules>
   </component>
